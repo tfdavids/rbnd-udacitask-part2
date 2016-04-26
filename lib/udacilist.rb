@@ -32,4 +32,15 @@ class UdaciList
       puts "#{position + 1}) #{item.details}"
     end
   end
+  def table
+    puts "-" * @title.length
+    puts @title
+    puts "-" * @title.length
+    rows = []
+    @items.each_with_index do |item, position|
+      rows << ["#{position + 1}"] + item.details_array
+    end
+    table = Terminal::Table.new :rows => rows
+    puts table
+  end
 end

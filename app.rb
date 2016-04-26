@@ -1,5 +1,6 @@
 require 'chronic'
 require 'colorize'
+require 'terminal-table'
 # Find a third gem of your choice and add it to your project
 require 'date'
 require_relative "lib/listable"
@@ -16,9 +17,9 @@ list.add("todo", "Buy groceries", priority: "high")
 list.add("event", "Birthday Party", start_date: "2016-05-08")
 list.add("event", "Vacation", start_date: "2016-05-28", end_date: "2016-05-31")
 list.add("link", "https://github.com", site_name: "GitHub Homepage")
-list.all
+list.table
 list.delete(3)
-list.all
+list.table
 
 # SHOULD CREATE AN UNTITLED LIST AND ADD ITEMS TO IT
 # --------------------------------------------------
@@ -40,7 +41,7 @@ new_list.add("link", "http://ruby-doc.org")
 
 # DISPLAY UNTITLED LIST
 # ---------------------
-new_list.all
+new_list.table
 
 # DEMO FILTER BY ITEM TYPE
 # ------------------------

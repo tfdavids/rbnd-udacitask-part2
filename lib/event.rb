@@ -12,4 +12,9 @@ class EventItem
     date = "N/A" if !date
     format_description(@description) + "event dates: " + date
   end
+  def details_array
+    date = format_date(@start_date, @end_date)
+    date = "N/A" if !date
+    [@description, "event dates: " + date]
+  end
 end
