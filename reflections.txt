@@ -1,13 +1,25 @@
 # What you added to Udacitask 2.0
 # -------------------------------------------------------
 1. What is the gem of your choice and how did you use it?
+I used the terminal-table gem to print the lists in a table.
 2. Describe the 2 features you added to the project.
-  a) Feature 1...
-  b) Feature 2...
+  a) The ability to delete multiple items at a time by passing multiple values
+     into the delete method.
+  b) The ability to change the priority of an item by passing the index and the
+     new priority into the update_priority method.
 
 # REFLECTIONS
 # -------------------------------------------------------
 1. How long did you spend working on this project?
+Two hours.
 2. What was the most rewarding challenge you conquered?
+I liked figuring out how to use the case statement in Ruby, as well as how to
+accept any number of arguments (when deleting multiple items).
 3. What two additional features did you build? Why?
+I added the ability to delete multiple items because I wanted to learn how to
+pass multiple arguments to a method, and I added the ability to change the
+priority of an item because that's a useful thing for a todo list to have.
 4. Where do you still have room to grow?
+I think I can improve on my use of Gems, and do a better job at finding Gems
+that work well for me. I also worried I repeated myself too much in certain
+areas.
