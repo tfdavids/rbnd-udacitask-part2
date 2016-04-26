@@ -21,4 +21,7 @@ class TodoItem
     date = "No due date" if !date
     [@description, "due: " + date + format_priority(@priority)]
   end
+  def self.type
+    "todo"
+  end
 end

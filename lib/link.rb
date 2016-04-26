@@ -16,4 +16,7 @@ class LinkItem
   def details_array
     [@description, "site name: " + format_name]
   end
+  def self.type
+    "link"
+  end
 end

@@ -16,4 +16,7 @@ class EventItem
     date = "N/A" if !date
     [@description, "event dates: " + date]
   end
+  def self.type
+    "event"
+  end
 end

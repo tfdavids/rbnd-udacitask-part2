@@ -38,7 +38,7 @@ class UdaciList
     puts "-" * @title.length
     rows = []
     @items.each_with_index do |item, position|
-      rows << ["#{position + 1}"] + item.details_array
+      rows << ["#{position + 1}", item.class.type] + item.details_array
     end
     table = Terminal::Table.new :rows => rows
     puts table
