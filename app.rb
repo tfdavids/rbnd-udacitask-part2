@@ -45,4 +45,14 @@ new_list.table
 
 # DEMO FILTER BY ITEM TYPE
 # ------------------------
-# new_list.filter("event")
+new_list.filter("event")
+
+# UPDATE PRIORITY OF DANCING
+# --------------------------
+new_list.update_priority(2, "high")
+new_list.table
+
+# DELETE MULTIPLE EVENTS
+# ----------------------
+new_list.delete(3, 6, 8)
+new_list.table

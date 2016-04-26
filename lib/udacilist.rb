@@ -18,11 +18,15 @@ class UdaciList
       raise UdaciListErrors::InvalidItemType
     end
   end
-  def delete(index)
-    if index > @items.length
+  def delete(*indices)
+    if indices.max > @items.length
       raise UdaciListErrors::IndexExceedsListSize
     end
-    @items.delete_at(index - 1)
+    new_items = []
+    @items.each_with_index do |item, position|
+      new_items << item if !indices.include?(position + 1)
+    end
+    @items = new_items
   end
   def all
     puts "-" * @title.length
@@ -42,5 +46,23 @@ class UdaciList
     end
     table = Terminal::Table.new :rows => rows
     puts table
+  end
+  def filter(type)
+    puts "-" * @title.length
+    puts @title
+    puts "-" * @title.length
+    rows = []
+    @items.each_with_index do |item, position|
+      rows << ["#{position + 1}", item.class.type] + item.details_array if item.class.type == type
+    end
+    if rows
+      table = Terminal::Table.new :rows => rows
+      puts table
+    else
+      puts "No items of type #{type}"
+    end
+  end
+  def update_priority(item, priority)
+    @items[item-1].set_priority(priority)
   end
 end
