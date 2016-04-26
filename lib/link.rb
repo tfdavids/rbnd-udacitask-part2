@@ -10,7 +10,8 @@ class LinkItem
     @site_name ? @site_name : ""
   end
   def details
-    format_description(@description) + "site name: " + format_name
+    arr = self.details_array
+    format_description(arr[0]) + arr[1]
   end
   def details_array
     [@description, "site name: " + format_name]

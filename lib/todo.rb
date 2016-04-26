@@ -13,11 +13,8 @@ class TodoItem
     end
   end
   def details
-    date = format_date(@due)
-    date = "No due date" if !date
-    format_description(@description) + "due: " +
-    date +
-    format_priority(@priority)
+    arr = self.details_array
+    format_description(arr[0]) + arr[1]
   end
   def details_array
     date = format_date(@due)
